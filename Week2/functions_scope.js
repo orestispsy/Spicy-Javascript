@@ -41,10 +41,9 @@ function whatever(x) {
     } else {
         do {
             x=x*10
-        } while (x<=1000000); { 
-         }
+        } while (x<=1000000);
     }
     return x;
 }
 
-console.log(whatever(22.62346));
+console.log(whatever(6433));
