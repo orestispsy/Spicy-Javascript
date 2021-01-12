@@ -50,3 +50,19 @@ console.log(whatever(0));
 console.log(whatever(1000057));
 console.log(whatever('heyho'));
 console.log(whatever(33));
+
+// Bonus exercise
+// Write a function that returns a function that can be called repeatedly and passed a number each time. Each time it is called it should return the sum of the number that is passed in and all other numbers that were passed in previous calls. That is, it should return the sum of all the numbers that were ever passed to it.
+
+var getTotaler = function(num) {
+    var x=0;
+    return function(num) {
+      return x=x+num;
+    };   
+};
+
+var totaler = getTotaler();
+ console.log(totaler(1)); 
+ console.log(totaler(2)); 
+ console.log(totaler(3)); 
+ console.log(totaler(4)); 
