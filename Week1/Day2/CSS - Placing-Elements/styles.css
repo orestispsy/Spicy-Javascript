@@ -11,22 +11,11 @@ header {
 .pseudo-cell {
     width: 50%;
     display: table-cell;
-    border: 1px black dotted
+    border: 1px black dotted;
 }
-
-.first {
-    text-align: center;
-}
-
  .second {
     text-align: right;
 }
-
-.third {
-    text-align: left;
-}
-
-
 #logo {
     height: 50px;
     width: 50px;
@@ -71,14 +60,16 @@ h1 {
     right: 30%;
 }
 
-strong {
+p { 
+    font-family:'Times New Roman';
+    text-align:left;
     font-size: 20px;
 }
 
+
 img[alt='cat'] {
+    width: 5%;
     float: left ;
-    width: 5%
-    
 }
 
 img[alt='world'] {
@@ -92,5 +83,6 @@ img[alt='columns'] {
 }
 
 img[alt='swim'] {
-    width: 5%
+    width: 5%;
+    float: left ;
 }
