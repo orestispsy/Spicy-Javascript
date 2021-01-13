@@ -16,9 +16,7 @@ function each(objOrArr, callback) {
     for (var key in objOrArr) {
        callback(objOrArr[key], key); 
 }
-
 }
-
 }
 
 
