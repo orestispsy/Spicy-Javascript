@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    background-color: lightgrey;
 }
 
 header {
@@ -12,8 +13,9 @@ header {
     width: 50%;
     display: table-cell;
     border: 1px black dotted;
+    background-color: white;
 }
- .second {
+.second {
     text-align: right;
 }
 #logo {
@@ -25,7 +27,7 @@ header {
 }
 
 #logo img {
-    width: 300%
+    width: 300%;
 }
 
 #menu-button {
@@ -43,14 +45,17 @@ img {
 }
 
 .container {
-    width: 100%;
-    background-color: lightgrey;
-    position: relative;
+    width: 50%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
     font-size: 15px;
 }
 
 h1 {
-    font-family: fantasy;
+    font-family: "Times New Roman";
+    font-style: oblique;
     font-size: 30px;
     color: white;
     position: absolute;
@@ -60,29 +65,37 @@ h1 {
     right: 30%;
 }
 
-p { 
-    font-family:'Times New Roman';
-    text-align:left;
+p {
+    font-family: "Times New Roman";
+    text-align: left;
+    display: table-cell;
     font-size: 20px;
 }
 
-
-img[alt='cat'] {
+img[alt="cat"] {
     width: 5%;
-    float: left ;
+    float: left;
 }
 
-img[alt='world'] {
+img[alt="world"] {
     width: 5%;
-    float: left ;
+    float: left;
 }
 
-img[alt='columns'] {
+img[alt="columns"] {
     width: 5%;
-    float: left ;
+    float: left;
 }
 
-img[alt='swim'] {
+img[alt="swim"] {
     width: 5%;
-    float: left ;
+    float: left;
+}
+
+main {
+    float: left;
+}
+
+aside {
+    float: right;
 }
