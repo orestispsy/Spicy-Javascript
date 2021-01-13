@@ -11,11 +11,14 @@ function each(objOrArr, callback) {
         callback(objOrArr[i], i);
         i++
     }
+    return;
  } else if (typeof objOrArr === 'object'); {
     for (var key in objOrArr) {
-        callback(objOrArr[key], key);
+       callback(objOrArr[key], key); 
 }
+
 }
+
 }
 
 
