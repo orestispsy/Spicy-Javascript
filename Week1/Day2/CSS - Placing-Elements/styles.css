@@ -1,18 +1,17 @@
 body {
     margin: 0;
     background-color: lightgrey;
+    font-family: "Times New Roman";
 }
 
 header {
     width: 100%;
     display: table;
-    border: 1px gray dashed;
 }
 
 .pseudo-cell {
     width: 50%;
-    display: table-cell;
-    border: 1px black dotted;
+    display: table-cell;  
     background-color: white;
 }
 .second {
@@ -54,7 +53,6 @@ img {
 }
 
 h1 {
-    font-family: "Times New Roman";
     font-style: oblique;
     font-size: 30px;
     color: white;
@@ -65,37 +63,47 @@ h1 {
     right: 30%;
 }
 
+#button {
+    width: 180px;
+    position: absolute;
+    top: 57%; 
+    left: 40%;
+    right: 50%;
+    border: 4px solid goldenrod;
+    border-radius:10mm;
+    padding: 1px;
+    background-color: yellow;
+    color: goldenrod;
+    text-align: center;
+}
+
 p {
-    font-family: "Times New Roman";
     text-align: left;
     display: table-cell;
     font-size: 20px;
 }
 
 img[alt="cat"] {
-    width: 5%;
+    width: 3%;
     float: left;
 }
 
 img[alt="world"] {
-    width: 5%;
+    width: 3%;
     float: left;
 }
 
 img[alt="columns"] {
-    width: 5%;
+    width: 3%;
     float: left;
 }
 
 img[alt="swim"] {
-    width: 5%;
+    width: 3%;
     float: left;
 }
 
-main {
-    float: left;
-}
 
-aside {
-    float: right;
+#stay {
+    display: table;
 }
