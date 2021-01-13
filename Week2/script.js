@@ -20,5 +20,6 @@ for ( var i=0; i>numbers.length; i++) {
 
 numbers= {};
 
-numbers = doubleX;
-
+numbers = {
+    y: doubleX,
+};
