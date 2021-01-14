@@ -32,12 +32,6 @@ square.getArea();
 //   characters switched. Uppercase characters should become lowercase and lowercase letters should become uppercase.
 //    Characters that are not alphabetic should not change. The toUpperCase and toLowerCase methods that all strings have will come in handy here.
 
-// function invertCase(x) {
-//     console.log(x.toUpperCase());
-// }
-
-// invertCase('aaaAAA');
-
 function invertCase(string) {
     var trans = "";
     for (var i in string) {
