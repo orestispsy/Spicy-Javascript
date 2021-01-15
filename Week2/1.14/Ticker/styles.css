@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    overflow:hidden;
+}
+
+#headlines {
+    white-space: nowrap;
+    position: absolute;
+    left:50%;
+    top: 10px;
+}
+
+#headlines a{
+    padding-right:35px;
+}
+
