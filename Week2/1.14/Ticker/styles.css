@@ -1,16 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    overflow:hidden;
+}
+
+#ticker {
+    position: relative;
+    overflow: hidden;
+    border: 3px dotted black;
+    height: 30px;
 }
 
 #headlines {
     white-space: nowrap;
     position: absolute;
-    left:50%;
-    top: 10px;
+    left: 50%;
+    top: 3px;
 }
 
-#headlines a{
-    padding-right:35px;
+#headlines a {
+    padding-right: 35px;
+    color:maroon;
 }
-
