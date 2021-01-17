@@ -4,23 +4,53 @@
 
 body {
     margin: 0;
+    
 }
 
 #ticker {
     position: relative;
     overflow: hidden;
-    border: 3px dotted black;
-    height: 30px;
+    height: 40px;
+    border: 2px solid;
+    background-color: black;
 }
 
 #headlines {
     white-space: nowrap;
     position: absolute;
-    left: 50%;
-    top: 3px;
+    left: 100%;
+    top: 7px;
 }
 
 #headlines a {
-    padding-right: 35px;
-    color:maroon;
+    font-family: fantasy;
+    padding-right: 15px;
+    padding-left: 15px;
+    color: white;
+    background-color: black;
+    margin: 1px;
+    text-decoration: none;
+}
+
+#headlines a:nth-child(2) {
+    color: lime;
+}
+
+#headlines #B {
+    background-color: red;
+    color: yellow !important; 
+    border: 4px;
+    border-color: lime;
+    border-style: solid;
+    border-radius: 66%;
+    font-size: 110%;
+    border-style: groove;
+}
+
+#headlines #A {
+    color: white;
+}
+
+#headlines #H {
+    color:lime;
 }
