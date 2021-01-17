@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+#box1 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: red;
+}
+
+#box2 {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+
+}
