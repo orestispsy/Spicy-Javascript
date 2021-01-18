@@ -121,9 +121,9 @@ footer {
     left: 0;
     right: 0;
     z-index: 10;
-    background-color: black;
     opacity: 50%;
     visibility: hidden;
+    background-color: black;
 }
 
 .side-nav div {
@@ -141,24 +141,39 @@ footer {
 .side-nav {
     position: fixed;
     background-color: white;
-    top:0;
-    left: 80%;
+    top: 0;
+    left: 100%;
     width: 20%;
     height: 100%;
     z-index: 11;
+    transform: translateX(0%);
+    transition-duration: 2s;
 }
 
 .side-nav p {
     font-size: 20px;
     float: right;
     margin-right: 10%;
-
 }
 
 #smallfont {
     font-size: 20px;
 }
 
+.showsidenav {
+ 
+    left: 80%;
+    transform: translateX(0%);
+    transition-duration: 2s;
+}
+
+.showoverlay {
+
+    visibility: visible;
+    transform: translateX(0%);
+    transition-duration: 2s;
+
+}
 
 @media (max-width: 500px) {
     header {
