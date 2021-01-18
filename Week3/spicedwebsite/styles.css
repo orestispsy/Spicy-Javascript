@@ -116,16 +116,18 @@ footer {
 
 .overlay {
     position: fixed;
-    top: 100%;
-    bottom: 100%;
-    left: 100%;
-    right: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     z-index: 10;
+    background-color: black;
+    opacity: 50%;
+    visibility: hidden;
 }
 
 .side-nav div {
     position: relative;
-    background-color: lime;
     top: 50px;
     font-size: 30px;
     padding-top: 10%;
@@ -136,25 +138,26 @@ footer {
     padding-left: 10%;
 }
 
-
-
 .side-nav {
-    background-color: black;
-    left: 100%;
+    position: fixed;
+    background-color: white;
+    top:0;
+    left: 80%;
     width: 20%;
     height: 100%;
     z-index: 11;
-    float:right;
 }
 
 .side-nav p {
     font-size: 20px;
-    color: red;
     float: right;
     margin-right: 10%;
 
 }
 
+#smallfont {
+    font-size: 20px;
+}
 
 
 @media (max-width: 500px) {
