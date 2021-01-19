@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header {
+    background-color: chocolate;
+    height: 70px;
+ 
+}
+
+footer {
+    background-color: maroon;
+    height: 30px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+
+main img {
+
+    align-self: center;
+}
