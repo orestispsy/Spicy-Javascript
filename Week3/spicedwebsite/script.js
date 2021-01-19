@@ -15,10 +15,10 @@ x.addEventListener("click", function () {
     overlay[0].classList.remove("showoverlay");   
 });
 
-overlay.addEventListener("click", function () {
+overlay[0].addEventListener("click", function () {
     sidenav[0].classList.remove("showsidenav");
     overlay[0].classList.remove("showoverlay");
 });
 
 
-//i have just a light opacity no matter its value when clicking X, and the overlay.addEventListener does not seem to work.
+//i have just a light opacity no matter its value when clicking X.
