@@ -1,0 +1,16 @@
+body {
+    margin:0;
+    display: grid;
+    min-height: 100vh;
+    background-color: grey;
+    grid-template-rows: 70px 1fr 30px 
+}
+
+header {
+    background-color:chocolate;
+
+}
+
+footer {
+    background-color: darkred;
+}
