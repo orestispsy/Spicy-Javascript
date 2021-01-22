@@ -20,5 +20,15 @@ overlay[0].addEventListener("click", function () {
     overlay[0].classList.remove("showoverlay");
 });
 
+function hideIt(){
+    $("#info").css("visibility", "visible");
+}
+
+setTimeout(hideIt, 1000);
+
+$(".xinfo").click(function() {
+     $("#info").css("visibility", "hidden");
+})
+
 
 //i have just a light opacity no matter its value when clicking X.
