@@ -4,7 +4,6 @@ $(".slider").mousedown(function (e) {
     console.log("clicked");
     e.stopPropagation();
     e.preventDefault();
-    var x = e.pageX - this.offsetLeft;
     move = true;
 
     $(".container").mousemove(function (e) {
@@ -14,11 +13,6 @@ $(".slider").mousedown(function (e) {
             $(".top").outerWidth(x + "px");
             $(".slider").css("left", x);
         }
-    });
-
-    $(".container").mouseleave(function (e) {
-        $("slider").css("left", 500 + "px");
-        console.log("elaaa");
     });
 });
 
