@@ -141,6 +141,12 @@ body{
     visibility: hidden;
 }
 
+.winner {
+     background-image: url("assets/winner.jpg");
+    background-size: cover;
+
+}
+
 
 /* Ticker !!!!!!!!!!!!! */
 

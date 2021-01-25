@@ -15,7 +15,6 @@ $(".audiodiv").click(function () {
 
 $(".end").click(function () {
     $(".end").animate({ height: "0" });
- 
 });
 
 $("#info").click(function (e) {
@@ -55,7 +54,7 @@ $(".column").on("click", function (e) {
         }, 1500);
         $(".end").animate({ height: "800px" });
         $(".end").css("visibility", "visible");
-        $(".hole").css("border-color", "red")
+        $(".hole").css("border-color", "red");
     } else if (checkForVictory(slotsInRow)) {
         myAudio.play();
         audio.pause();
@@ -87,15 +86,25 @@ $(".column").on("click", function (e) {
     switchPlayer();
 });
 
-
 function checkForVictory(slots) {
     var count = 0;
     for (var i = 0; i < slots.length; i++) {
         if (slots.eq(i).hasClass(currentPlayer)) {
-            
             count++;
             if (count === 4) {
-                return true;
+                if (slots.eq(i - 6).hasClass(currentPlayer)) {
+                    slots.eq(i - 6).addClass("winner");
+                    slots.eq(i - 7).addClass("winner");
+                    slots.eq(i - 8).addClass("winner");
+                    slots.eq(i - 9).addClass("winner");
+                    return true;
+                } else {
+                    slots.eq(i - 3).addClass("winner");
+                    slots.eq(i - 7).addClass("winner");
+                    slots.eq(i - 8).addClass("winner");
+                    slots.eq(i - 9).addClass("winner");
+                    return true;
+                }
             }
         } else {
             count = 0;
@@ -104,40 +113,51 @@ function checkForVictory(slots) {
 }
 
 // function winner(current) {
-    
+
 //     if (currentPlayer.hasClass("player1")) {
 
 //     }
 // }
 
-var winners=[];
+var winners = [];
 
 function checkForDiagonal5(slots) {
     for (var x = 2; x <= slots.length - 3; x++) {
-        if (
-            slots.eq(x).hasClass(currentPlayer) &&
-            slots.eq(x + 5).hasClass(currentPlayer) &&
-            slots.eq(x + 10).hasClass(currentPlayer) &&
-            slots.eq(x + 15).hasClass(currentPlayer)
-        ) {
-            return true;
-        }
+            if (
+                slots.eq(x).hasClass(currentPlayer) &&
+                slots.eq(x + 5).hasClass(currentPlayer) &&
+                slots.eq(x + 10).hasClass(currentPlayer) &&
+                slots.eq(x + 15).hasClass(currentPlayer) 
+               
+
+            ) {
+                slots.eq(x).addClass("winner");
+                slots.eq(x + 5).addClass("winner");
+                slots.eq(x + 10).addClass("winner");
+                slots.eq(x + 15).addClass("winner");
+                return true;
+            }
+        
+        
     }
 }
 
 function checkForDiagonal7(slots) {
-    for (var y = slots.length; y >= 0; y--) {
-        if (
+    for (var y = slots.length; y >=21; y--) {
+       if (
             slots.eq(y).hasClass(currentPlayer) &&
             slots.eq(y - 7).hasClass(currentPlayer) &&
             slots.eq(y - 14).hasClass(currentPlayer) &&
             slots.eq(y - 21).hasClass(currentPlayer)
         ) {
+            slots.eq(y).addClass("winner");
+            slots.eq(y - 7).addClass("winner");
+            slots.eq(y - 14).addClass("winner");
+            slots.eq(y - 21).addClass("winner");
             return true;
         }
     }
 }
-
 
 // !!!!!!!!!!!!TICKER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!~~~~~~~~~~~~~~
 
@@ -175,14 +195,3 @@ function checkForDiagonal7(slots) {
     moveHeadlines();
     stopHeadlines();
 })();
-
-//    { for (var j=-1; j<6; j++) {
-//         if (
-//             (slots.eq(y).find(".row5"))
-//         ) {
-//             return;
-//         } else {
-//             return true;
-//         }
-//         }
-//     }
