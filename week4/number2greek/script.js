@@ -22,8 +22,8 @@ function askForNumber() {
 function translateNumberToGreek() {
     try {
         var num = askForNumber();
-        alert(greekWay[num - 1]);
-        translateNumberToGreek();
+      alert(greekWay[num - 1]);
+        return greekWay[num - 1];
     } catch {
         alert("It's all greek to you, heh ?!");
         translateNumberToGreek();
