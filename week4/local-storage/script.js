@@ -10,12 +10,12 @@ try {
 }
 });
 
-// function previous() {
-//     try {
-//         input.val(localStorage.getItem("message"));
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
+function previous() {
+    try {
+        input.val(localStorage.getItem("message"));
+    } catch (error) {
+        console.log(error);
+    }
+}
 
-// previous();
+previous();
