@@ -19,21 +19,20 @@
                 response = response.artists || response.albums;
                 console.log("response: ", response);
 
-                if (response.items.length >0){
+                if (response.items.length == 0){
                     $(".searchINFO").css("visibility", "visible");
                     $(".searchINFO").html(
-                        "<div>" +
-                            "WE've got " +
-                            response.total +
-                            " results for you !" +
-                            "</div>"
+                        "<div>" + "Sorry no results" + "</div>"
                     );
 
-                }   else {$(".searchINFO").html(
+                }   else {$(".searchINFO").css("visibility", "visible");
+                $(".searchINFO").html(
                     "<div>" +
-                        "Sorry no results" +
+                        "WE've got " +
+                        response.total +
+                        " results for you !" +
                         "</div>"
-                ); }
+                )};
 
                 resultsHTML = "";
                 for (var i = 0; i < response.items.length; i++) {
