@@ -26,26 +26,21 @@
                         defaultImage = response.items[i].images[0].url;
                     }
 
-                    if (response.items.length == 0) {
-                        console.log("eeeee");
-                        resultsHtml +=
-                            "<div class='results-container'> Oh No !</div>";
-                    } else {
-                        resultsHTML +=
-                            "<div>" +
-                            "<a href=" +
-                            
-                            response.items[i].external_urls.spotify +">" +
-                                response.items[i].name + "</a>" +
-                                "</div>" +
-                                "<a href=" +
-                                response.items[i].external_urls.spotify +
-                                ">" +
-                                '<img src="' +
-                                defaultImage +
-                                '" />' +
-                                "</a>";
-                    }
+                    resultsHTML +=
+                        "<div>" +
+                        "<a href=" +
+                        response.items[i].external_urls.spotify +
+                        ">" +
+                        response.items[i].name +
+                        "</a>" +
+                        "</div>" +
+                        "<a href=" +
+                        response.items[i].external_urls.spotify +
+                        ">" +
+                        '<img src="' +
+                        defaultImage +
+                        '" />' +
+                        "</a>";
                 }
 
                 $(".results-container").html(resultsHTML);
@@ -57,7 +52,7 @@
                         "spicedify.herokuapp.com/spotify"
                     );
 
-                if (response.total > "20") {
+                if (response.next !== null) {
                     $("#next20").css("visibility", "visible");
                 }
             },
@@ -82,10 +77,14 @@
 
                         resultsNewHTML +=
                             "<div>" +
+                            "<a href=" +
+                            next20res.items[i].external_urls.spotify +
+                            ">" +
                             next20res.items[i].name +
+                            "</a>" +
                             "</div>" +
                             "<a href=" +
-                            next20res.href +
+                            next20res.items[i].external_urls.spotify +
                             ">" +
                             '<img src="' +
                             defaultImage +
