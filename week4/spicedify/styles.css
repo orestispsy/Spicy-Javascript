@@ -1,6 +1,5 @@
 body {
     background-color: black;
-    color:yellowgreen;
     font-family: fantasy;
     font-size: 150%;
 }
@@ -42,4 +41,19 @@ img {
 
 input {
     margin-bottom:15px;
+}
+
+a {
+    text-decoration: none;
+    color:yellowgreen;
+}
+
+.searchINFO {
+    color:white;
+    background-color: brown;
+    width: 300px;
+    height: 30px;
+    visibility: hidden;
+    text-align: center;
+    margin-bottom: 10px;
 }

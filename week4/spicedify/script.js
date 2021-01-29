@@ -19,7 +19,23 @@
                 response = response.artists || response.albums;
                 console.log("response: ", response);
 
-                resultsNewHtml = "";
+                if (response.items.length >0){
+                    $(".searchINFO").css("visibility", "visible");
+                    $(".searchINFO").html(
+                        "<div>" +
+                            "WE've got " +
+                            response.total +
+                            " results for you !" +
+                            "</div>"
+                    );
+
+                }   else {$(".searchINFO").html(
+                    "<div>" +
+                        "Sorry no results" +
+                        "</div>"
+                ); }
+
+                resultsHTML = "";
                 for (var i = 0; i < response.items.length; i++) {
                     var defaultImage = "fire&water.jpg";
                     if (response.items[i].images.length > 0) {
@@ -44,6 +60,7 @@
                 }
 
                 $(".results-container").html(resultsHTML);
+              
 
                 nextUrl =
                     response.next &&
@@ -67,8 +84,7 @@
                 },
                 success: function (next20res) {
                     next20res = next20res.artists || next20res.albums;
-                    console.log("next20res: ", next20res);
-
+                    
                     for (var i = 0; i < next20res.items.length; i++) {
                         var defaultImage = "fire&water.jpg";
                         if (next20res.items[i].images.length > 0) {
