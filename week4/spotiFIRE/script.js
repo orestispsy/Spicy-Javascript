@@ -87,21 +87,21 @@
 
                 if (location.search.indexOf("?scroll=infinite") > -1) {
                     if (apiResponse.next === null) {
-                        return
-                    } else{}
-                        function check4Infinity() {
-                            // console.log($(window).scrollTop());
-                            // console.log($(window).height());
-                            // console.log($(document).height());
-                            if (
-                                $(window).scrollTop() + $(window).height() >=
-                                $(document).height() - 300
-                            ) {
-                                requestAjax(nextUrl, true);
-                            } else {
-                                setTimeout(check4Infinity, 1000);
-                            }
+                        return;
+                    }
+                    function check4Infinity() {
+                        // console.log($(window).scrollTop());
+                        // console.log($(window).height());
+                        // console.log($(document).height());
+                        if (
+                            $(window).scrollTop() + $(window).height() >=
+                            $(document).height() - 300
+                        ) {
+                            requestAjax(nextUrl, true);
+                        } else {
+                            setTimeout(check4Infinity, 1000);
                         }
+                    }
                     check4Infinity();
                 } else {
                     if (apiResponse.next !== null) {
