@@ -12,7 +12,7 @@ h1 {
     text-shadow: 1px 1px 10px yellow;
 }
 
-h2, h3, h4 {
+h2 {
     color:lime;
     text-align: center;
     margin: 5px;
@@ -69,6 +69,10 @@ img {
 }
 
 img:hover {
-    box-shadow: 5px 5px 100px 40px black;
+    box-shadow: 5px 5px 100px 1px black;
     transition: 2s;
+    /* transform: rotateY(540deg) scale(1.1); */
+    max-width:200px;
+    max-height:200px;
+    transform: translate3d(0, -4px, -57px) rotateY(720deg) scale(1.1);
 }
