@@ -1,0 +1,60 @@
+body {
+    background-color: black;
+    font-family: fantasy;
+    font-size: 150%;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.platform {
+    position: absolute;
+    top:60%;
+    left:29%;
+}
+
+#spotifire {
+    position: absolute;
+    top:0;
+    width: 80%;
+    height: 80%;
+}
+
+#next20 {
+    position:fixed;
+    font-family: monospace;
+    visibility: hidden;
+    bottom:15px;
+    left:0;
+}
+
+.results-container {
+    color:white;
+    position:absolute;
+    left: 10%;
+    width:200px;
+    text-align: center;
+}
+
+input {
+    margin-bottom:15px;
+}
+
+a {
+    text-decoration: none;
+    color:yellowgreen;
+}
+
+.searchINFO {
+    color:white;
+    background-color: brown;
+    width: 300px;
+    height: 30px;
+    visibility: hidden;
+    text-align: center;
+    margin-bottom: 10px;
+}
