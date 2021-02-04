@@ -22,7 +22,7 @@ function logSizes(path) {
     });
 }
 
-logSizes(__dirname);
+logSizes(`${__dirname}/files`);
 
 ////////////////////             PART 2
 
