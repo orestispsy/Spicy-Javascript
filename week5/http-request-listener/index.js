@@ -1,10 +1,11 @@
 const http = require("http");
 
+const fs = require("fs");
+
 const server = http.createServer((req, res) => {
     req.on("error", (err) => console.log(err));
     res.on("error", (err) => console.log(err));
-    console.log(req.headers, req.method, req.url);
-
+    console.log(req.headers, req.method, req.url);  
     if (req.method == "GET") {
         res.setHeader("content-type", "text/html");
         res.statusCode = 200;
@@ -13,6 +14,8 @@ const server = http.createServer((req, res) => {
 <title>Hello World!</title>
 <p>Hello World!</p>
 </html>`);
+
+
     } else if (req.method == "HEAD") {
         res.setHeader("content-type", "text/html");
         res.statusCode = 200;
@@ -32,6 +35,15 @@ const server = http.createServer((req, res) => {
         res.statusCode = 405;
         res.end();
     }
+    fs.appendFile(
+        "message.txt",
+        `${Date()}\t${req.method}\t${req.url}\t${
+            req.headers["user-agent"]
+        }`,
+        (err) => {
+            if (err) throw err;
+        }
+    );
 });
 
 server.listen(8080, () => console.log("🟢 Listening..."));
