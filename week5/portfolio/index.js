@@ -100,6 +100,5 @@ const server = http.createServer((req, res) => {
     });
 });
 
-server.listen(8080, () => console.log(`🟢 Listening Port: ${fe} ...`));
+server.listen(8080, () => console.log(`🟢 Listening ...`));
 
-console.log (url.parse("http://127.0.0.1:8080/test?a=100&b=200"));
