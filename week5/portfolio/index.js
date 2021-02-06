@@ -14,14 +14,14 @@ const contentType = {
     ".gif": "image/gif",
     ".jpg": "image/jpeg",
     ".png": "image/png",
-    ".svg": "image/svg+xml",
+    ".mp3": "audio/mpeg",
 };
 
 const server = http.createServer((req, res) => {
     req.on("error", (err) => console.log(err));
     res.on("error", (err) => console.log(err));
     console.log(
-        chalk.yellow("REQUESTED URL -> "),
+        chalk.magenta("REQUESTED URL -> "),
         req.url,
         chalk.green(Date())
     );
@@ -29,7 +29,8 @@ const server = http.createServer((req, res) => {
     if (req.method != "GET") {
         console.log(
             chalk.red("ANOTHER REQUEST THAN A 'GET' TYPE WAS MADE"),
-            chalk.green(Date())
+            chalk.green(Date()),
+            req.headers["user-agent"]
         );
         res.statusCode = 405;
         return res.end();
@@ -46,7 +47,8 @@ const server = http.createServer((req, res) => {
         res.statusCode = 403;
         console.log(
             chalk.red("🚨 Warning, INTRUDER Incoming Request 🚨"),
-            chalk.green(Date())
+            chalk.green(Date()),
+            req.headers["user-agent"]
         );
         return res.end();
     }
@@ -58,8 +60,9 @@ const server = http.createServer((req, res) => {
             return res.end();
         }
         if (stats.isDirectory()) {
-            console.log(chalk.green("User Requested A Directory"));
+            console.log(chalk.cyan("User Folder Request"));
             if (req.url.endsWith("/")) {
+                res.statusCode = 302;
                 const readStreamHtml = fs.createReadStream(
                     requestedFilePath + "index.html"
                 );
@@ -73,16 +76,7 @@ const server = http.createServer((req, res) => {
             } else {
                 res.statusCode = 302;
                 res.setHeader("Location", req.url + "/");
-                const readStreamHtml = fs.createReadStream(
-                    requestedFilePath + "/index.html"
-                );
-                res.setHeader("Content-Type", "text/html");
-                readStreamHtml.pipe(res);
-                readStreamHtml.on("error", (err) => {
-                    console.log("Error in readStreamHtml - Local Error", err);
-                    res.statusCode = 500;
-                    return res.end();
-                });
+                res.end();
             }
         } else {
             console.log(chalk.cyan("User File Request ->"), requestedFilePath);
@@ -90,13 +84,22 @@ const server = http.createServer((req, res) => {
                 chalk.cyan("File extension ->"),
                 path.extname(requestedFilePath)
             );
+            res.statusCode = 200;
+            const readStreamHtml = fs.createReadStream(requestedFilePath);
             res.setHeader(
                 "Content-Type",
                 `${contentType[path.extname(requestedFilePath)]}`
             );
-            return res.end();
+            readStreamHtml.pipe(res);
+            readStreamHtml.on("error", (err) => {
+                console.log("Error in readStreamHtml - Local Error", err);
+                res.statusCode = 500;
+                return res.end();
+            });
         }
     });
 });
 
-server.listen(8080, () => console.log("🟢 Listening..."));
+server.listen(8080, () => console.log(`🟢 Listening Port: ${fe} ...`));
+
+console.log (url.parse("http://127.0.0.1:8080/test?a=100&b=200"));
