@@ -17,14 +17,12 @@ module.exports.projectOverviewList = function () {
         <meta name="viewport" content="width=device-width" initial-scale="1" />
         <title>Portfolio</title>
     </head>
-
     <body>
-
 <div>
 <h2>Featuring Projects</h2>
 ${linksHTML}
 </div>
-<body>
+</body>
 </html>`;
     return generatedHTML;
 };
