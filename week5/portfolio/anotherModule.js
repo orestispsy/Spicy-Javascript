@@ -4,11 +4,11 @@ module.exports.projectOverviewList = function () {
     const directories = fs.readdirSync(`projects/`, { withFileTypes: true });
     var linksHTML = "";
     directories.forEach((item) => {
-        if (item.isDirectory()){
-linksHTML += `<p><a href="/${item.name}/" target="_blank">${item.name}</a></p>  `;
-        }    
-    })  
-    
+        if (item.isDirectory()) {
+            linksHTML += `<p><a href="/${item.name}/" target="_blank">${item.name}</a></p>  `;
+        }
+    });
+
     var generatedHTML = `<!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
@@ -28,4 +28,3 @@ ${linksHTML}
 </html>`;
     return generatedHTML;
 };
-

@@ -61,9 +61,9 @@
                     $(".searchINFO").css("visibility", "visible");
                     $(".searchINFO").html(
                         "<div>" +
-                            "WE've got " +
+                            "There are " +
                             apiResponse.total +
-                            " results for you !" +
+                            " results!" +
                             "</div>"
                     );
                 }
