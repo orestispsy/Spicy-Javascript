@@ -1,10 +1,14 @@
 const http = require("http");
 
+const url = require("url");
+
 const fs = require("fs");
 
 const chalk = require("chalk");
 
 const path = require("path");
+
+const anotherModule = require("./anotherModule.js");
 
 const contentType = {
     ".html": "text/html",
@@ -25,7 +29,6 @@ const server = http.createServer((req, res) => {
         req.url,
         chalk.green(Date())
     );
-
     if (req.method != "GET") {
         console.log(
             chalk.red("ANOTHER REQUEST THAN A 'GET' TYPE WAS MADE"),
@@ -38,10 +41,7 @@ const server = http.createServer((req, res) => {
 
     const requestedFilePath = path.normalize(__dirname + "/projects" + req.url);
 
-    console.log(
-        chalk.yellow("Requested File Path -> " + requestedFilePath),
-        chalk.green(Date())
-    );
+    console.log(chalk.yellow("Requested File Path -> " + requestedFilePath));
 
     if (!requestedFilePath.startsWith(`${__dirname}/projects/`)) {
         res.statusCode = 403;
@@ -61,7 +61,12 @@ const server = http.createServer((req, res) => {
         }
         if (stats.isDirectory()) {
             console.log(chalk.cyan("User Folder Request"));
-            if (req.url.endsWith("/")) {
+            if (req.url == "/") {
+                res.statusCode = 200;
+                res.setHeader("content-type", "text/html");
+                res.write(anotherModule.projectOverviewList());
+                res.end();
+            } else if (req.url.endsWith("/")) {
                 res.statusCode = 302;
                 const readStreamHtml = fs.createReadStream(
                     requestedFilePath + "index.html"
@@ -100,5 +105,10 @@ const server = http.createServer((req, res) => {
     });
 });
 
-server.listen(8080, () => console.log(`🟢 Listening ...`));
-
+server.listen(8080, () =>
+    console.log(
+        `🟢 Listening Port ${chalk.green(
+            url.parse(`localhost:8080/`).hostname
+        )} ...`
+    )
+);
