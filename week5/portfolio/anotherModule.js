@@ -13,6 +13,7 @@ module.exports.projectOverviewList = function () {
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8" />
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
         <link rel="stylesheet" href="style.css" />
         <meta name="viewport" content="width=device-width" initial-scale="1" />
         <title>Portfolio</title>

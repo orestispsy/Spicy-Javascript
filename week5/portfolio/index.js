@@ -10,6 +10,13 @@ const path = require("path");
 
 const anotherModule = require("./anotherModule.js");
 
+// const cluster = require("cluster");
+// console.log(cluster.worker.process.pid)
+
+// if (Math.random()>0.5){
+//     throw new Error("SERVER CRASHED")
+// }
+
 const contentType = {
     ".html": "text/html",
     ".css": "text/css",
@@ -108,7 +115,7 @@ const server = http.createServer((req, res) => {
 server.listen(8080, () =>
     console.log(
         `🟢 Listening Port ${chalk.green(
-            url.parse(`localhost:8080/`).hostname
+            url.parse(`localhost:8080`).hostname
         )} ...`
     )
 );
