@@ -3,16 +3,31 @@ const app = express ();
 
 const cookieParser = require("cookie-parser");
 
+const basicAuth = require("basic-auth");
+
 app.use(express.urlencoded({ extended: false }));
 
 app.use(cookieParser());
 
+const auth = function (req, res, next) {
+    const creds = basicAuth(req);
+    if (!creds || creds.name != "1234" || creds.pass != "1234") {
+        res.setHeader(
+            "WWW-Authenticate",
+            'Basic realm="Enter your credentials to see this stuff."'
+        );
+        res.sendStatus(401);
+    } else {
+        next();
+    }
+};
+
 app.get("/cookie", (req, res) => {
     
-    res.send(`<h2>You've got to Agree acceping cookies to enter the Page.</h2>
+    res.send(`<h2>You've got to Agree accepting Cookies to enter this Page.</h2>
     <form method='POST'>
     <input type="checkbox" name="agree">
-    <button> submit </submit></form>`);
+    <button> agree </submit></form>`);
 });
 
 app.post("/cookie", (req, res) => {
@@ -35,7 +50,15 @@ app.use((req, res, next) => {
     }
 });
 
+app.get("/spotiFIRE", auth, (req, res) => {
+    res.sendFile(__dirname + "/projects" + req.url);
+});
+
 app.use(express.static(__dirname + "/projects"));
+
+
+
+
 
 const server = app.listen(8080, () =>
     console.log(`🟢 Listening ${server.address().port} ...`)
