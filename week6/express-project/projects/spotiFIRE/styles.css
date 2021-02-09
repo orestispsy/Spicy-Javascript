@@ -1,0 +1,59 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    font-family: fantasy;
+    font-size: 150%;
+}
+
+img {
+    margin-bottom: 5px;
+    margin-top: 10px;
+    width: 200px;
+    height: 200px;
+}
+
+#spotifire {
+    width: 40%;
+    height: 40%;
+}
+
+#next20 {
+    position:fixed;
+    font-family: monospace;
+    visibility: hidden;
+    bottom:15px;
+    left:0;
+}
+
+.results-container { 
+    width:200px;
+    text-align: center; 
+    margin-left:50px;
+}
+
+input {
+    margin-bottom:15px;
+}
+
+a {
+    letter-spacing: 3px;
+    text-align: center;
+    text-shadow: 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white,
+        -1px -1px 0 white;
+    text-decoration: none;
+    color:black;
+}
+
+.searchINFO {
+    color:white;
+    text-shadow: 2px -2px 10px crimson, -2px 2px 10px crimson, 2px 2px 10px crimson,
+        -2px -2px 10px crimson;
+    height: 30px;
+    visibility: hidden;
+    text-align: center;
+    margin-bottom: 10px;
+}

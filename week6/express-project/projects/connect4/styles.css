@@ -1,0 +1,200 @@
+body{
+    background-color: black;
+    min-height: 80vh;
+    cursor:pointer;
+    overflow: hidden;
+}
+
+.container {
+  margin: 35px;
+  overflow: hidden;
+}
+
+#board {
+    display: flex;
+     align-self: center;
+    justify-content:center;
+
+}
+
+.slot {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.hole {
+    height: 80px;
+    width: 80px;
+    transform: translate(-30px,-30px);
+    border: 40px solid lime;
+    border-radius:50%;
+}
+
+.player1 {
+    background-color: red;
+     background-image: url("assets/player1.gif");
+    background-size: cover;
+
+}
+
+.player2 {
+    background-color: yellow;
+    background-image: url("assets/player2.gif");
+    background-size: cover;
+ 
+
+
+}
+
+.winner {
+    background-image: url("assets/winner.jpg");
+    background-size: contain;
+}
+
+#info {
+  
+    position:absolute;
+    top:10vh;
+    left: 70vh;
+    font-family: fantasy;
+    width: 450px;
+    height: 150px;
+    background-color: black;
+    color:lime;
+    z-index: 1355234;
+    text-align: center;
+    visibility:hidden;
+}
+
+.xinfo {
+    margin:0;
+    position: absolute;
+    font-size: 80%;
+    right:5px;
+    top:0;
+}
+
+.infomsg{
+    position:absolute;
+    top:30%;
+    left:20%;
+    font-size: 150%;
+    text-align: center;
+  
+}
+
+
+
+.console {
+    font-family:fantasy;
+    position: absolute;
+    left:70px;
+    bottom:10%;
+    background-color: black;
+    
+}
+
+.console p {
+    color:white;
+    text-align: center;
+    font-size: 30px;
+    white-space:pre-line;
+    margin:0;
+}
+
+.audio {
+    height:0;
+}
+
+.audiodiv{
+
+    position: absolute;
+    right: 10px;
+    bottom:5%;
+    width: 120px;
+    height: 25px;
+
+}
+
+.audiodiv p {
+    position: absolute;
+    overflow:hidden;
+    right:10px;
+    bottom:5%;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    font-family: fantasy;
+    white-space: pre-line;
+   
+}
+
+.end {position:absolute;
+    top:33px;
+    left: 17%;
+    background-image: url("assets/audio.gif");
+    background-size: 200vh;
+    width: 820px;
+    height:0px;
+    background-repeat:inherit;
+    visibility: hidden;
+}
+
+.winner {
+     background-image: url("assets/winner.jpg");
+    background-size: cover;
+
+}
+
+
+/* Ticker !!!!!!!!!!!!! */
+
+#ticker {
+
+    overflow: hidden;
+    height: 40px;
+    border: 2px solid;
+    background-color: black;
+}
+
+#headlines {
+    white-space: nowrap;
+    position: absolute;
+    left: 100%;
+    top: 7px;
+}
+
+#headlines a {
+    font-family: fantasy;
+    padding-right: 15px;
+    padding-left: 15px;
+    color: white;
+    background-color: black;
+    margin: 1px;
+    text-decoration: none;
+}
+
+#headlines a:nth-child(1) {
+    color: lime;
+}
+
+#headlines #B {
+    background-color: red;
+    color: yellow !important; 
+    border: 4px;
+    border-color: lime;
+    border-style: solid;
+    border-radius: 66%;
+    font-size: 110%;
+    border-style: groove;
+}
+
+#headlines #A {
+    color: white;
+}
+
+#headlines #H {
+    color:lime;
+}
+
