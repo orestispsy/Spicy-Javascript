@@ -1,18 +1,14 @@
 [
     {
-        "title": "SpotiFIRE",
-        "directory": "spotiFIRE"
-    },
-    {
         "title": "Panes",
         "directory": "panes"
     },
     {
-        "title": "Handlebars",
-        "directory": "handlebars"
-    },
-    {
         "title": "Connect 4",
         "directory": "connect4"
+    },
+    {
+        "title": "SpotiFIRE",
+        "directory": "spotiFIRE"
     }
 ]
