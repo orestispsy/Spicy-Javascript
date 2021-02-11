@@ -1,0 +1,17 @@
+<div class="container1temp">
+    
+    {{#selectedProject}}
+    <h1>{{title}}</h1>
+    <img class="imgtemp" src="/{{{directory}}}/preview.jpg" alt="{{{title}}}">
+    <h2 class="h2temp">{{description}}</h2>
+    {{/selectedProject}}
+</div>
+<div class="container2temp">
+
+{{#projects}}
+ <a href="projects/{{{directory}}}"><div class="name">{{{title}}}
+    
+    </div><img class="imgpreview" src="/{{{directory}}}/preview.jpg" alt="{{{title}}}"></a>
+{{/projects}}
+
+</div>

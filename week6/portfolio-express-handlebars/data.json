@@ -1,14 +1,17 @@
 [
     {
         "title": "Panes",
-        "directory": "panes"
+        "directory": "panes",
+        "description": "This is a small piece of Magic of what Javascript can do !"
     },
     {
         "title": "Connect 4",
-        "directory": "connect4"
+        "directory": "connect4",
+        "description": "Not a lot to say about this Game ! Weren't you a kid ?! Connect 4 ! "
     },
     {
         "title": "SpotiFIRE",
-        "directory": "spotiFIRE"
+        "directory": "spotifire",
+        "description": "A small gadget for music lovers. A Search Engine for Spotify, just outside of it !"
     }
 ]
