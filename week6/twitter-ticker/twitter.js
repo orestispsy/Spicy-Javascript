@@ -1,13 +1,8 @@
 const { twitterKey, twitterSecret } = require("./secrets");
 
 const https = require("https");
-const { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } = require("constants");
-const { url } = require("inspector");
 
 module.exports.getToken = function getToken(callbackToken) {
-    console.log("running getToken");
-    // this function get what's called the bearerToken from twitter
-    // we will work this out in class
     let credentials = `${twitterKey}:${twitterSecret}`;
     let encodedCredentials = Buffer.from(credentials).toString("base64");
 
@@ -22,23 +17,17 @@ module.exports.getToken = function getToken(callbackToken) {
     };
     function reqCallback(response) {
         if (response.statusCode != 200) {
-            // something went wrong with our request,
-            // we are passing the status error code to our callbackToken function
             callbackToken(response.statusCode);
             return;
         }
-        // if we reach this point of the code we have a valid response
         let body = "";
         response.on("data", (chunk) => {
             body += chunk;
         });
 
         response.on("end", () => {
-            // console.log("body:", body);
+
             let parsedBody = JSON.parse(body);
-            // console.log("parsedBody:", parsedBody.access_token);
-            // all went good we are passing null, and the actual token to our callbackToken
-            // function
             callbackToken(null, parsedBody.access_token);
         });
     }
@@ -47,12 +36,12 @@ module.exports.getToken = function getToken(callbackToken) {
     req.end("grant_type=client_credentials");
 };
 
-module.exports.getTweets = function getTweets(bearerToken, callbackTweets) {
-    console.log("running getTweets with the token:", bearerToken);
+module.exports.getTweets = function getTweets(bearerToken, tweetSelect, callbackTweets) {
+    console.log("getTweets with token:", bearerToken);
     const options = {
         host: "api.twitter.com",
         path:
-            "/1.1/statuses/user_timeline.json?screen_name=1000_mods&tweet_mode=extended",
+            "/1.1/statuses/user_timeline.json?screen_name=" +tweetSelect +"&tweet_mode=extended",
         method: "GET",
         headers: {
             Authorization: `Bearer ${bearerToken}`,
@@ -69,12 +58,7 @@ module.exports.getTweets = function getTweets(bearerToken, callbackTweets) {
         });
 
         response.on("end", () => {
-            // console.log("body:", body);
             let parsedBody = JSON.parse(body);
-
-            // console.log("parsed TWEETS:", parsedBody);
-            // all went good we are passing null, and the actual token to our callbackToken
-            // function
             callbackTweets(null, parsedBody);
         });
     }
@@ -84,11 +68,18 @@ module.exports.getTweets = function getTweets(bearerToken, callbackTweets) {
 
 module.exports.filterTweets = function filterTweets(tweets) {
     const filteredTweets = [];
+
     for (let i = 0; i < tweets.length; i++) {
-        if (tweets[i].entities.urls.length == 1) {
-            console.log(tweets[i].entities.urls[0]);
+        if (typeof tweets[i].entities.urls[0] == "object") {
+            console.log(tweets[i].entities.urls[0], tweets[i].full_text);
+            let linkOfTweet = tweets[i].entities.urls[0].url;
+            let fullText = tweets[i].full_text;
+            let tweetTitle = fullText.replace(linkOfTweet, "");
+            let image = `<img src="./tweet.jpg">`;
+            let provider = `<span style="color:lime"> ${tweets[i].user.name}</span>
+            <span style="color:red"> ➤ </span>`;
             let finalTweet = {
-                text: tweets[i].full_text,
+                text: `${image} ${provider} ${tweetTitle}`,
                 link: tweets[i].entities.urls[0].url,
             };
             filteredTweets.push(finalTweet);

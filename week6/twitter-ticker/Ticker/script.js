@@ -19,14 +19,15 @@
 
             for (var j = 0; j < links.length; j++) {
                 links.eq(j).on("mouseenter", function (event) {
-                    event.target.style.color = "yellow";
+                    // event.target.style.color = "yellow";
                     cancelAnimationFrame(requestid);
                 });
 
                 links.eq(j).on("mouseleave", function (event) {
-                    event.target.style.color = "white";
+                    // event.target.style.color = "white";
                     event.target.style.textDecoration = "none";
                     requestAnimationFrame(moveHeadlines);
+                    left = headlines.offset().left;
                 });
             }
             function moveHeadlines() {
