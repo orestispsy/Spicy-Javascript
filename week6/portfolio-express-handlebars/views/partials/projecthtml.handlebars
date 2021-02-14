@@ -2,8 +2,9 @@
 
 {{#projects}}
 
-  <a class="links" href="/projects/{{{directory}}}"><div class="name">{{{title}}}
+  <a class="selectedProject{{highlighted . ../name}}" href="/projects/{{{directory}}}"><div class="name">{{{title}}}
     </div><img class="imgScr" src="/{{{directory}}}/preview.jpg" alt="{{{title}}}"></a>
+    
 {{/projects}}
 
 </div>

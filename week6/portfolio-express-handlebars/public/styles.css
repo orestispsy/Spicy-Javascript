@@ -4,7 +4,7 @@
 
 body {
     margin: 0;
-    min-height: 140vh;
+    min-height: 100vh;
     background-color: white;
     color: white;
     font-family: monospace;
@@ -22,7 +22,7 @@ body {
 
 .container2 {
     display: flex;
-    justify-content:space-around;   
+    justify-content:space-around;
 }
 
 h1 {
@@ -32,7 +32,7 @@ h1 {
     color: white;
     text-shadow: 0 0 10px black, 0 0 10px black, 0 0 10px black,
         0 0 10px black;
-    transition:1s;
+    transition:0.8s;
 }
 
 .imgScr {  
@@ -44,7 +44,7 @@ h1 {
     padding: 25px; 
     border-bottom: transparent;
     box-shadow: 0 0 10px black;
-    transition: 1s;  
+    transition: 1s; 
 } 
 
 .imgScr:hover {
@@ -111,9 +111,10 @@ footer {
 }
 
 .imgtemp {
-     width: 200px;
+     width: 280px;
+
     box-shadow: 0 0 30px black, 0 0 30px black, 0 0 30px black,
-        0 0 30px black;
+        0 0 30px rgba(0, 0, 0, 0.1);
 }
 
 .container1temp {
@@ -121,15 +122,15 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+   margin-bottom:20px; 
 }
 
 
 .go {
     color:crimson;
-    font-size: 50px;
-    border: 0;
-    margin:25px;
-    opacity: 80%;
+    font-size: 30px;
+    margin-top: 20px;
+    opacity: 90%;
     text-shadow: -1px 1px 0 white, 1px -1px 0 white, 1px 1px 0 white,
         -1px -1px 0 white;
     font-family:fantasy;
@@ -137,9 +138,69 @@ footer {
     color: crimson;
     font-size: 50px;
     font-weight: 500;
+    border-radius:50%;
+    letter-spacing: 6px;
+    
+    
 }
 
 .go:hover {
+    opacity: 80%;
+    transition: 0.1s;
+    color:yellow;
+    text-shadow: -2px 2px 0 crimson, 2px -2px 0 crimson, 2px 2px 0 crimson,
+        -2px -2px 0 crimson;
+}
+
+.selectedProjectHighlighted {
+    border-style: solid;
+    border-left: 1px;
+    border-right:1px;
+    border-bottom: transparent;
     opacity: 100%;
-    transition: 1s;
+    border-radius: 50%;
+    border-color: black;
+    text-shadow: 0 0 10px yellow, 0 0 10px yellow, 0 0 10px yellow,
+        0 0 10px yellow;
+    font-family:fantasy;
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    font-weight: 500; 
+}
+
+.selectedProjectHighlighted:hover {
+    border-color:black;
+    box-shadow: 0 0 50px rgba(0, 0, 0);
+    transition:0.3s;
+
+}
+
+.selectedProject { 
+    
+    border-style: solid;
+    border-left: 1px;
+    border-right:1px;
+    border-bottom: transparent;
+    opacity: 80%;
+    border-radius: 50%;
+    border-color: black;
+    text-shadow: -1px 1px 0 white, 1px -1px 0 white, 1px 1px 0 white,
+        -1px -1px 0 white;
+    font-family:fantasy;
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.selectedProject:hover {
+    opacity: 100%;
+    border-color:black;
+    box-shadow: 0 0 50px rgba(0, 0, 0);
+    transition:0.3s;
+}
+
+.h1temp {
+    transition:none;
 }

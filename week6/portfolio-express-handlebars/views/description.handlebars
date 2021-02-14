@@ -1,11 +1,13 @@
 <div class="container1temp">
     
     {{#selectedProject}}
-    <h1>{{title}}</h1>
+    <h1 class="h1temp">{{title}}</h1>
     <img class="imgtemp" src="/{{{directory}}}/preview.jpg" alt="{{{title}}}">
+    <a href="/{{{directory}}}/index.html" class="go">Go!</a>
     <h2 class="h2temp">{{description}}</h2>
-     <a class="go" href="/{{{directory}}}/index.html" target="_blank">Go!</a>
+    
     {{/selectedProject}}
 </div>
+<div class="container2temp">
 
 {{>projecthtml}}
